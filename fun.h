@@ -1,4 +1,6 @@
 #pragma once
+#define N 256
+
 
 void linspace(double d1, double d2, double n, double *y)
 {
@@ -41,7 +43,7 @@ void linspace(double d1, double d2, double n, double *y)
 	//printf("%lf",c);
 }
 
-void meshgrid(double *x, double *y)
+void meshgrid(double **X,double **Y, double *x, double *y)
 {
 	int i, j;
 	for (i = 0;i<N;i++)
@@ -52,5 +54,21 @@ void meshgrid(double *x, double *y)
 			Y[i][j] = y[i];
 		}
 	}
+
+}
+
+double sum(double **x)
+{
+	int i, j;
+	double sumOfarra = 0.0;
+	for (i = 0;i<N;i++)
+	{
+		for (j = 0;j<N;j++)
+		{
+			sumOfarra += x[i][j];
+
+		}
+	}
+	return sumOfarra;
 
 }
